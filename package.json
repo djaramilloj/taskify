@@ -1,0 +1,34 @@
+{
+  "name": "taskify",
+  "version": "1.0.0",
+  "description": "An app that allow you to manage your own task list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ext js,hbs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/djaramilloj/taskify.git"
+  },
+  "keywords": [
+    "task",
+    "todo",
+    "list",
+    "management"
+  ],
+  "author": "Juan David Jaramillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djaramilloj/taskify/issues"
+  },
+  "homepage": "https://github.com/djaramilloj/taskify#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express-handlebars": "^5.1.0",
+    "nodemon": "^2.0.4"
+  }
+}

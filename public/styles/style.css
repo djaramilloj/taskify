@@ -1,0 +1,22 @@
+h1 {
+    color: red;
+}
+
+.list__custom {
+    margin: 30px;
+}
+
+.list__elements {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list__elements--actionslist {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list__elements--action {
+    margin-right: 10px;
+}
+
