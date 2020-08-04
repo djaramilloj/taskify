@@ -1,13 +1,19 @@
 <div class="list-group list__custom">
   <a href="#" class="list-group-item list-group-item-action">Tu lista de tareas</a>
+  {{#each tasks}}
   <a href="#" class="list-group-item list-group-item-action list-group-item-primary list__elements">
-      A simple primary list group item
+      {{task}}
       <div class="list__elements--actionslist">
-        <span class="badge badge-primary badge-pill list__elements--action" >Prioridad baja</span>
+        <span class="badge badge-primary badge-pill list__elements--action" >{{priority}}</span>
+        {{#if finished}}
+        <p>no hay acciones disponibles</p>
+        {{else}}
         <button type="button" class="btn btn-success list__elements--action">Terminada</button>
         <button type="button" class="btn btn-danger list__elements--action">Eliminar</button>
+        {{/if}}
       </div>
   </a>
-  <a href="#" class="list-group-item list-group-item-action list-group-item-danger list__elements">A simple danger list group item</a>
-  <a href="#" class="list-group-item list-group-item-action list-group-item-warning list__elements">A simple warning list group item</a>
+  {{/each}}
+  {{!-- <a href="#" class="list-group-item list-group-item-action list-group-item-danger list__elements">A simple danger list group item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-warning list__elements">A simple warning list group item</a> --}}
 </div>
