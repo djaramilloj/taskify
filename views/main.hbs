@@ -1,19 +1,18 @@
 <div class="list-group list__custom">
-  <a href="#" class="list-group-item list-group-item-action">Tu lista de tareas</a>
+  <a href="" class="list-group-item list-group-item-action">Your to-do list</a>
   {{#each tasks}}
-  <a href="#" class="list-group-item list-group-item-action list-group-item-primary list__elements">
+  <a href="" class="list-group-item list-group-item-action list-group-item-primary list__elements">
       {{task}}
       <div class="list__elements--actionslist">
         <span class="badge badge-primary badge-pill list__elements--action" >{{priority}}</span>
         {{#if finished}}
-        <p>no hay acciones disponibles</p>
+        <p>No actions available</p>
         {{else}}
-        <button type="button" class="btn btn-success list__elements--action">Terminada</button>
-        <button type="button" class="btn btn-danger list__elements--action">Eliminar</button>
+        <button type="button" class="btn btn-success list__elements--action" onclick="window.location.href='/task/{{_id}}'">Finished</button>
+        <button type="button" class="btn btn-danger  list__elements--action" onclick="window.location.href=''">Delete</button>
         {{/if}}
       </div>
   </a>
   {{/each}}
-  {{!-- <a href="#" class="list-group-item list-group-item-action list-group-item-danger list__elements">A simple danger list group item</a>
-  <a href="#" class="list-group-item list-group-item-action list-group-item-warning list__elements">A simple warning list group item</a> --}}
+  <a class="btn btn-primary button-add-task" href="/task/add-task" role="button">Add Task</a>
 </div>

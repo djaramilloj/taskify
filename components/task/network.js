@@ -6,7 +6,7 @@ const response = require('../../network/response');
 
 router.get('/', (req, res) => {
     controller.getTasks()
-        .then(data => {
+        .then(data => {            
             res.render('main', {
                 layout: 'index',
                 tasks: data,
@@ -18,15 +18,39 @@ router.get('/', (req, res) => {
 })
 
 
-router.post('/', (req, res) => {    
+router.post('/add-task', (req, res) => {    
     controller.addTask(req.body.task, req.body.priority)
         .then(data => {
-            response.success(req, res, data);
+            res.redirect('/task');
         })
         .catch(e => {
-            response.error(req, res, 'Información inválida', 400, e)
+            response.error(req, res, 'Invalid Information', 400, e)
         })
 })
+
+
+router.get('/add-task', (req, res) => {
+    res.render('taskForm', {
+        layout: 'index',
+    });
+})
+
+
+router.put('/:id', (req, res) => {
+    console.log('me ejecute');
+    
+    const taskId = req.params.id;
+    console.log(taskId);
+    
+    controller.finishTask(taskId)
+        .then(data => {
+            res.redirect('/task');
+        })
+        .catch(e => {
+            response.error(req, res, 'Invalid Information', 500, e)
+        })
+})
+
 
 
 module.exports = router;
