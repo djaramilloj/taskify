@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/djaramilloj/taskify#readme",
   "devDependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
